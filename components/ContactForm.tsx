@@ -26,7 +26,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="" onSubmit={handleSubmit}>
+    <form name="contact" className="" onSubmit={handleSubmit} data-netlify="true">
       <Input
         value={formData.name}
         handleInputChange={handleChange}
