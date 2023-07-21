@@ -1,23 +1,23 @@
 import CommonLanding from "../components/sections/CommonLanding";
-import ExteriorSection from "../components/sections/ExteriorSection";
 import GetQuoteSection from "../components/sections/GetQuoteSection";
+import ResidentialSection from "../components/sections/ResidentialSection";
 import Head from "next/head";
 
-const ExteriorPage: React.FC = () => {
+const ResidentialPage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Exterior Painting & Decorating</title>
+        <title>Residential Painting & Decorating</title>
         <meta
           name="description"
           content="Welcome to our painting and decorating site"
         />
       </Head>
-      <CommonLanding heading={"Exterior Painting & Decorating"} />
-      <ExteriorSection />
+      <CommonLanding heading={"Residential Painting & Decorating"} />
+      <ResidentialSection />
       <GetQuoteSection />
     </>
   );
 };
 
-export default ExteriorPage;
+export default ResidentialPage;

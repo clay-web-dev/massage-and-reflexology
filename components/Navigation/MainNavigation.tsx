@@ -8,6 +8,22 @@ import Image from "next/image";
 import Logo from "../../assets/logo.svg";
 import Light from "../../assets/light.svg";
 
+const navItemsData = [
+  { pageLink: "/", copy: "Home", subMenuItems: [] },
+  { pageLink: "/about", copy: "About", subMenuItems: [] },
+  {
+    pageLink: "/treatments",
+    copy: "Treatments",
+    subMenuItems: [
+      { pageLink: "/about/history", copy: "Holistic Facial" },
+      { pageLink: "/about/team", copy: "Chemical Peels" },
+    ],
+  },
+  { pageLink: "", copy: "Skin Care", subMenuItems: [] },
+  { pageLink: "/pricing", copy: "Pricing", subMenuItems: [] },
+  { pageLink: "/contact", copy: "Contact", subMenuItems: [] },
+];
+
 const MainNavigation: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -48,56 +64,26 @@ const MainNavigation: React.FC = () => {
       <Header />
       <nav className="flex justify-between m-auto max-w-screen-lg max-lg:px-4 max-lg:bg-white">
         <BurgerMenu />
-        <div className="py-2">
-          <Link href="/">
-            <Image
-              src={Logo}
-              alt="Painting and decorating logo"
-              className="w-24"
+        <ul className="menu-list max-lg:hidden menu flex w-full">
+          <div className="py-2">
+            <Link href="/">
+              <Image
+                src={Logo}
+                alt="Painting and decorating logo"
+                className="w-24"
+              />
+            </Link>
+          </div>
+          {navItemsData.map((item, index) => (
+            <NavItem
+              key={index}
+              pageLink={item.pageLink}
+              copy={item.copy}
+              subMenuItems={item.subMenuItems}
+              handleClick={() => {}}
             />
-          </Link>
-        </div>
-
-        <ul className="menu-list max-lg:hidden menu flex">
-          <NavItem pageLink="/" copy="Home" handleClick={function () {}} />
-          <NavItem
-            pageLink="/about"
-            copy="About"
-            handleClick={function () {}}
-          />
-          <NavItem
-            pageLink="/residential"
-            copy="Residential"
-            handleClick={function () {}}
-          />
-          <NavItem
-            pageLink="/commercial"
-            copy="Commercial"
-            handleClick={function () {}}
-          />
-          <NavItem
-            pageLink="/exterior"
-            copy="Exterior"
-            handleClick={function () {}}
-          />
-          <NavItem
-            pageLink="/testimonials"
-            copy="Testimonials"
-            handleClick={function () {}}
-          />
-          <NavItem
-            pageLink="/contact"
-            copy="Contact"
-            handleClick={function () {}}
-          />
+          ))}
         </ul>
-
-        <button onClick={openModal} className="">
-          <span className="border-2 border-blue-800 rounded uppercase text-xs font-bold text-blue-900 p-2 hover:bg-blue-900 hover:text-white duration-200">
-            Get a Quote{" "}
-          </span>
-        </button>
-        {isModalOpen && <ModalForm handleClose={closeModal} />}
       </nav>
     </header>
   );
