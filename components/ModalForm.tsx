@@ -2,15 +2,12 @@ import { useState, useEffect, useRef, ChangeEvent, FormEvent } from "react";
 import CloseButton from "./CloseButton";
 import Input from "./Input";
 import ReactDOM from "react-dom";
-import getConfig from 'next/config'
 
 interface ModalFormProps {
   handleClose: () => void;
 }
 
 const ModalForm = (props: ModalFormProps) => {
-  const captchaRef = useRef<any>(null);
-  const captchaKey = getConfig().publicRuntimeConfig.REACT_APP_SITE_KEY;
 
   const [formData, setFormData] = useState({
     name: "",
