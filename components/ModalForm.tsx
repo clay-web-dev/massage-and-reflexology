@@ -86,7 +86,7 @@ const ModalForm = (props: ModalFormProps) => {
             </p>
 
             <form
-              name="contact"
+              name="contact1"
               className="max-w-md text-sm"
               onSubmit={handleSubmit}
               method="POST"
