@@ -8,14 +8,15 @@ interface ModalFormProps {
 }
 
 const ModalForm = (props: ModalFormProps) => {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -37,7 +38,8 @@ const ModalForm = (props: ModalFormProps) => {
     if (
       modalRef.current &&
       !modalRef.current.contains(event.target as Node) &&
-      ((event instanceof KeyboardEvent && event.key === "Escape") || event.type === 'mousedown')
+      ((event instanceof KeyboardEvent && event.key === "Escape") ||
+        event.type === "mousedown")
     ) {
       document.body.style.overflow = "auto";
       props.handleClose();
@@ -64,7 +66,10 @@ const ModalForm = (props: ModalFormProps) => {
 
   return (
     <>
-      {ReactDOM.createPortal(<TintOverlay />, document.getElementById("tint") as Element)}
+      {ReactDOM.createPortal(
+        <TintOverlay />,
+        document.getElementById("tint") as Element
+      )}
       {ReactDOM.createPortal(
         <div className="fixed top-0 left-0 w-screen h-screen flex z-20 items-center justify-center">
           <div
@@ -80,7 +85,12 @@ const ModalForm = (props: ModalFormProps) => {
               touch.
             </p>
 
-            <form name="contact" className="max-w-md text-sm" onSubmit={handleSubmit} data-netlify="true">
+            <form
+              name="contact"
+              className="max-w-md text-sm"
+              onSubmit={handleSubmit}
+              data-netlify="true"
+            >
               <Input
                 value={formData.name}
                 handleInputChange={handleChange}
