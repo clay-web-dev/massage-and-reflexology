@@ -89,6 +89,7 @@ const ModalForm = (props: ModalFormProps) => {
               name="contact"
               className="max-w-md text-sm"
               onSubmit={handleSubmit}
+              method="POST"
               data-netlify="true"
             >
               <Input
