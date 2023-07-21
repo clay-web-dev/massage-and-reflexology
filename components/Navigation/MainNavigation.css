@@ -1,0 +1,11 @@
+.navbar {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar.visible {
+    transform: translateX(0%);
+  }
+  
+  .navbar.hidden {
+    transform: translateX(-100%);
+  }
