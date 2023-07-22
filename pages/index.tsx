@@ -1,6 +1,5 @@
 import IntroSection from "../components/sections/IntroSection";
 import AboutUsSection from "../components/sections/AboutUsSection";
-import GetQuoteSection from "../components/sections/GetQuoteSection";
 import PerfectPainterSection from "../components/sections/PerfectPainterSection";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import WhyUsSection from "../components/sections/WhyUsSection";
@@ -22,7 +21,6 @@ const HomePage: React.FC = () => {
       <PerfectPainterSection />
       <AboutUsSection />
       <WhyUsSection />
-      <GetQuoteSection />
       <TestimonialsSection />
     </>
   );
