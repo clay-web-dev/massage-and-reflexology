@@ -11,7 +11,7 @@ const NavItem: React.FC<{
   pageLink: string;
   handleClick: () => void;
   copy: string;
-  subMenuItems: SubMenuItem[];
+  subMenuItems?: SubMenuItem[];
 }> = (props) => {
   const [isSubMenuVisible, setIsSubMenuVisible] = useState(false);
 
@@ -32,7 +32,7 @@ const NavItem: React.FC<{
       <Link href={props.pageLink} onClick={props.handleClick}>
         {props.copy}
       </Link>
-      {isSubMenuVisible && props.subMenuItems.length > 0 && (
+      {props.subMenuItems && isSubMenuVisible && props.subMenuItems.length > 0 && (
         <ul className="whitespace-nowrap mt-1 sub-menu absolute left-0 top-full bg-white border border-gray-200" style={{ display: 'block', zIndex: 10 }}>
           {props.subMenuItems.map((subItem, index) => (
             <li key={index} className="sub-menu-item hover:bg-white hover:text-blue-900 hover:border-blue-900 duration-200 ">

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import Quote from "../assets/quote.svg";
 
 const TestimonialsCarousel = () => {
   const slides = [
@@ -56,12 +54,6 @@ const TestimonialsCarousel = () => {
         &lt;
       </button>
       <div className="carousel-content text-center block">
-        <Image
-          alt="quote-open"
-          className="quote-open"
-          src={Quote}
-          draggable="false"
-        />
         <div>{slides[activeSlide].content.name}</div>
         <div>{slides[activeSlide].content.location}</div>
         <div>{slides[activeSlide].content.comment}</div>
